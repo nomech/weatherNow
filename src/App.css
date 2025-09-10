@@ -18,13 +18,12 @@ main {
 	grid-template-columns: repeat(12, var(--spacing-900));
 	grid-template-rows: auto;
 	gap: var(--spacing-300);
+	justify-items: center;
 }
-
 .title {
 	grid-column: 3 / 11;
-	place-self: center;
 	padding: var(--spacing-500) 0;
+	font-family: var(--font-bricolage);
 	font-size: var(--tp2-size);
 	font-weight: var(--tp2-weight);
-	line-height: var(--tp2-lh);
 }

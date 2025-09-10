@@ -1,25 +1,23 @@
 @font-face {
-	font-family: 'Dm Sans';
-	src: url('./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
-	font-weight: 100 700;
+	font-family: 'Bricolage Grotesque';
+	src: url('./assets/fonts/BricolageGrotesque-VariableFont.ttf') format('truetype');
+	font-weight: 200 800;
+	font-style: normal; 
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'DM Sans';
+	src: url('./assets/fonts/DMSans-VariableFont.ttf') format('truetype');
+	font-weight: 100 1000;
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
-	font-family: 'Dm Sans';
-	src: url('./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
-	font-weight: 100 700;
+	font-family: 'DM Sans';
+	src: url('./assets/fonts/DMSans-Italic-VariableFont.ttf') format('truetype');
+	font-weight: 100 1000;
 	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Bricolage Grotesque';
-	src: url('./assets/fonts/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf')
-		format('truetype');
-	font-weight: 400;
-	font-style: bold;
 	font-display: swap;
 }
 
@@ -79,6 +77,7 @@
 
 	/* Typography */
 	--font-dm-sans: 'DM Sans', sans-serif;
+	--font-bricolage: 'Bricolage Grotesque', sans-serif;
 
 	/* Text Preset 1 - SemiBold Italic */
 	--tp1-weight: 600;
@@ -90,12 +89,10 @@
 	--tp2-weight: 700;
 	--tp2-size: 52px;
 
-
 	/* Text Preset 3 - Light */
 	--tp3-weight: 300;
 	--tp3-size: 32px;
 	--tp3-lh: 100%;
-
 
 	/* Text Preset 4 - Bold */
 	--tp4-weight: 700;
@@ -105,26 +102,21 @@
 	--tp5-weight: 600;
 	--tp5-size: 20px;
 
-
 	/* Text Preset 5 (Medium) */
 	--tp5m-weight: 500;
 	--tp5m-size: 20px;
-
 
 	/* Text Preset 6 - Medium */
 	--tp6-weight: 500;
 	--tp6-size: 18px;
 
-
 	/* Text Preset 7 - Medium */
 	--tp7-weight: 500;
 	--tp7-size: 16px;
 
-	
 	/* Text Preset 8 - Regular */
 	--tp8-weight: 400;
 	--tp8-size: 14px;
-
 }
 
 * {
@@ -133,6 +125,7 @@
 	box-sizing: border-box;
 	color: var(--netutral-0);
 	font-family: var(--font-dm-sans);
+	line-height: 120%;
 }
 
 body,

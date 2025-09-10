@@ -1,0 +1,30 @@
+.searchbarContainer {
+	display: flex;
+	grid-column: 3 / 11;
+	gap: var(--spacing-200);
+	width: 80%;
+}
+
+.searchbar {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: var(--spacing-200);
+	width: 100%;
+	padding: var(--spacing-200);
+	border-radius: var(--radius-12);
+	background-color: var(--netutral-800);
+}
+
+.searchIcon {
+	width: 24px;
+	height: 24px;
+}
+
+.searchInput {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	font-size: var(--tp5-size);
+}
