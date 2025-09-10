@@ -31,9 +31,9 @@
 	--netutral-800: #262540;
 	--netutral-700: #302f4a;
 	--netutral-600: #3c3b5e;
-	--netural-300: #acacb7;
-	--netural-200: #d4d3d9;
-	--neutral-0: #ffffff;
+	--netutral-300: #acacb7;
+	--netutral-200: #d4d3d9;
+	--netutral-0: #ffffff;
 
 	/* Orange */
 	--orange-500: #ff820a;
@@ -75,10 +75,6 @@
 	--radius-0: 0px;
 
 	/* Typography */
-	--font-family: Dm Sans, sans-serif;
-
-	/* src/styles/globals.css */
-
 	--font-dm-sans: 'DM Sans', sans-serif;
 
 	/* Text Preset 1 - SemiBold Italic */
@@ -132,6 +128,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: var(--netutral-0);
+	font-family: var(--font-dm-sans);
 }
 
 body,
@@ -140,5 +138,5 @@ html {
 }
 
 body {
-  background-color: var(--netutral-900);
+	background-color: var(--netutral-900);
 }

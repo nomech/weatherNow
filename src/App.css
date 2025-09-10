@@ -1,8 +1,29 @@
 #root {
 	display: grid;
 	grid-template-columns: repeat(12, 4rem);
-	grid-template-rows: auto;
-	place-self: center;
 	gap: 2rem;
+	margin: 0 auto;
 	text-align: center;
+	place-content: center;
+}
+
+header {
+	grid-column: 1 / -1;
+}
+
+main {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: repeat(12, 4rem);
+	grid-template-rows: auto;
+	gap: 2rem;
+}
+
+.title {
+	grid-column: 3 / 9;
+	place-self: center;
+	padding: 8rem 0;
+	font-size: var(--tp2-size);
+	font-weight: var(--tp2-weight);
+	line-height: var(--tp2-lh);
 }
