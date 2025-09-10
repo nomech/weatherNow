@@ -81,29 +81,51 @@
 
 	--font-dm-sans: 'DM Sans', sans-serif;
 
+	/* Text Preset 1 - SemiBold Italic */
+	--tp1-weight: 600;
+	--tp1-size: 96px;
+	--tp1-letter-spacing: -2px;
+	--tp1-style: italic;
+
+	/* Text Preset 2 - Bold */
+	--tp2-weight: 700;
+	--tp2-size: 52px;
+
+
 	/* Text Preset 3 - Light */
 	--tp3-weight: 300;
 	--tp3-size: 32px;
 	--tp3-lh: 100%;
-	--tp3-tracking: 0;
+
 
 	/* Text Preset 4 - Bold */
 	--tp4-weight: 700;
 	--tp4-size: 28px;
-	--tp4-lh: 120%;
-	--tp4-tracking: 0;
 
 	/* Text Preset 5 - SemiBold */
 	--tp5-weight: 600;
 	--tp5-size: 20px;
-	--tp5-lh: 120%;
-	--tp5-tracking: 0;
+
 
 	/* Text Preset 5 (Medium) */
 	--tp5m-weight: 500;
 	--tp5m-size: 20px;
-	--tp5m-lh: 120%;
-	--tp5m-tracking: 0;
+
+
+	/* Text Preset 6 - Medium */
+	--tp6-weight: 500;
+	--tp6-size: 18px;
+
+
+	/* Text Preset 7 - Medium */
+	--tp7-weight: 500;
+	--tp7-size: 16px;
+
+	
+	/* Text Preset 8 - Regular */
+	--tp8-weight: 400;
+	--tp8-size: 14px;
+
 }
 
 * {
