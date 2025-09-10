@@ -1,7 +1,7 @@
 #root {
 	display: grid;
-	grid-template-columns: repeat(12, 4rem);
-	gap: 2rem;
+	grid-template-columns: repeat(12, var(--spacing-900));
+	gap: var(--spacing-300);
 	margin: 0 auto;
 	text-align: center;
 	place-content: center;
@@ -9,20 +9,21 @@
 
 header {
 	grid-column: 1 / -1;
+	margin-top: var(--spacing-300);
 }
 
 main {
 	grid-column: 1 / -1;
 	display: grid;
-	grid-template-columns: repeat(12, 4rem);
+	grid-template-columns: repeat(12, var(--spacing-900));
 	grid-template-rows: auto;
-	gap: 2rem;
+	gap: var(--spacing-300);
 }
 
 .title {
-	grid-column: 3 / 9;
+	grid-column: 3 / 11;
 	place-self: center;
-	padding: 8rem 0;
+	padding: var(--spacing-500) 0;
 	font-size: var(--tp2-size);
 	font-weight: var(--tp2-weight);
 	line-height: var(--tp2-lh);
