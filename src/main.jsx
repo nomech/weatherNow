@@ -5,9 +5,7 @@ import App from './App.jsx';
 import { WeatherProvider } from './contexts/weather/WeatherProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
-	<StrictMode>
-		<WeatherProvider>
-			<App />
-		</WeatherProvider>
-	</StrictMode>
+	<WeatherProvider>
+		<App />
+	</WeatherProvider>
 );

@@ -28,3 +28,8 @@
 	border: none;
 	font-size: var(--tp5-size);
 }
+
+.noResults {
+	grid-column: 5/ 9;
+	margin: 24px;
+}

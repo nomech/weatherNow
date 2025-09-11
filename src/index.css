@@ -2,7 +2,7 @@
 	font-family: 'Bricolage Grotesque';
 	src: url('./assets/fonts/BricolageGrotesque-VariableFont.ttf') format('truetype');
 	font-weight: 200 800;
-	font-style: normal; 
+	font-style: normal;
 	font-display: swap;
 }
 
@@ -135,4 +135,17 @@ html {
 
 body {
 	background-color: var(--netutral-900);
+}
+
+.loading {
+	animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

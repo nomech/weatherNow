@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './Searchbar.module.css';
 import searchIcon from '../../assets/images/icon-search.svg';
 import Button from './../Button/Button';
 import { useFetch } from '../../hooks/useFetch';
 import Dropdown from './../Dropdown/Dropdown';
 import { useWeather } from '../../contexts/weather';
+import { useClickAway } from '@uidotdev/usehooks';
 
 const Searchbar = () => {
 	const [search, setSearch] = useState('');
 	const [selectedLocation, setSelectedLocation] = useState();
 	const [isVisible, setIsVisible] = useState(false);
 
-	const { data, isLoading, error } = useFetch(
+	const dropdownRef = useClickAway(() => {
+		setIsVisible(false);
+	});
+
+	const { data, isLoading } = useFetch(
 		`https://geocoding-api.open-meteo.com/v1/search?name=${search}&count=10&language=en&format=json`
 	);
+
+	useMemo(() => ({ data }), [data]);
 
 	const { setLocation } = useWeather();
 
@@ -37,10 +44,12 @@ const Searchbar = () => {
 	const handleonClickSubmit = (e) => {
 		e.preventDefault();
 		console.log(selectedLocation);
-		setLocation({
-			latitude: selectedLocation.latitude,
-			longitude: selectedLocation.longitude,
-		});
+		if (selectedLocation) {
+			setLocation({
+				latitude: selectedLocation.latitude,
+				longitude: selectedLocation.longitude,
+			});
+		}
 	};
 
 	return (
@@ -59,11 +68,20 @@ const Searchbar = () => {
 						onClick={handleonClickSearch}
 					/>
 					{data?.results && isVisible && (
-						<Dropdown locations={data} onClick={handleOnClickDropdownmItem} />
+						<Dropdown
+							locations={data}
+							onClick={handleOnClickDropdownmItem}
+							ref={dropdownRef}
+							isLoading={isLoading}
+						/>
 					)}
 				</div>
 				<Button onClick={handleonClickSubmit}>Search</Button>
 			</div>
+
+			{selectedLocation === null && (
+				<h2 className={styles.noResults}>No Search Resutls found!</h2>
+			)}
 		</>
 	);
 };

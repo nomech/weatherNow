@@ -24,7 +24,6 @@ export const WeatherProvider = ({ children }) => {
 
 	useMemo(() => ({ data, error, isLoading }), [data, error, isLoading]);
 
-	if (data) console.log(data);
 
 	return (
 		<WeatherContext.Provider value={{ data, error, isLoading, setParams, setLocation }}>
