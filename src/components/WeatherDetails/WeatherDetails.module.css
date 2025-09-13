@@ -1,4 +1,8 @@
 .weatherDetails {
 	grid-column: 1 / 9;
-	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-300);
+	width: 100%;
 }
