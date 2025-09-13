@@ -6,23 +6,22 @@ const HourlyForecast = ({ hourlyForecastData, isLoading }) => {
 	const [timeAndTemp, setTimeAndTemp] = useState(null);
 
 	useEffect(() => {
-		if (hourlyForecastData) {
+		if (hourlyForecastData && hourlyForecastData.hourly) {
+			const { time, temperature_2m } = hourlyForecastData.hourly;
 			const now = new Date();
 			now.setMinutes(0, 0, 0);
 			const isoDate = now.toISOString().slice(0, 13);
-			const timeOfDayIndex = hourlyForecastData?.time.findIndex(
-				(time) => time.slice(0, 13) === isoDate
-			);
-			const timeStart = Math.max(timeOfDayIndex);
+			const timeOfDayIndex = time.findIndex((t) => t.slice(0, 13) === isoDate);
+			const timeStart = Math.max(timeOfDayIndex, 0);
 			const timeEnd = timeOfDayIndex + 8;
 
-			const forecastTimeRange = hourlyForecastData?.time.slice(timeStart, timeEnd);
-			const forecastTempRange = hourlyForecastData?.temperature_2m.slice(timeStart, timeEnd);
+			const forecastTimeRange = time.slice(timeStart, timeEnd);
+			const forecastTempRange = temperature_2m.slice(timeStart, timeEnd);
 
 			setTimeAndTemp(
-				forecastTimeRange.map((time, index) => {
+				forecastTimeRange.map((t, index) => {
 					return {
-						time: formatTime(new Date(time)),
+						time: formatTime(new Date(t)),
 						temperature: Math.round(forecastTempRange[index]),
 					};
 				})

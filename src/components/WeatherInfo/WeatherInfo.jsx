@@ -5,18 +5,10 @@ const WeatherInfo = ({ data, isLoading }) => {
 	const now = new Date();
 	now.setMinutes(0, 0, 0);
 
-	const isoDate = now.toISOString();
-	const trimmedIsoDate = isoDate.slice(0, 16);
-
-	const timeOfDay = data.hourly?.time.indexOf(trimmedIsoDate);
-	const currentTemperature = data.hourly?.temperature_2m[timeOfDay];
-	const roundedTemperature = Math.round(currentTemperature);
-	const weatherCode = data.current?.weather_code;
-
 	return (
-		<div className={styles.weatherInfo}>
-			{!isLoading && (
-				<>
+		<>
+			{!isLoading && data && (
+				<div className={styles.weatherInfo}>
 					<div className={styles.location}>
 						<h2>
 							{data?.name}, {data?.country}
@@ -25,15 +17,17 @@ const WeatherInfo = ({ data, isLoading }) => {
 					</div>
 					<div className={styles.temperature}>
 						<img
-							src={weatherMap[weatherCode]}
+							src={weatherMap[data.current.weather_code]}
 							alt="Weather icon"
 							className={styles.weatherIcon}
 						/>
-						<h2 className={styles.temperatureValue}>{roundedTemperature}°</h2>
+						<h2 className={styles.temperatureValue}>
+							{Math.round(data.current.temperature_2m)}°
+						</h2>
 					</div>
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

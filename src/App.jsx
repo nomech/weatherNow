@@ -8,13 +8,11 @@ import { useWeather } from './contexts/weather';
 import WeatherDetails from './components/WeatherDetails/WeatherDetails';
 
 const App = () => {
-	const { weatherData, current, hourlyForecastData, isLoading, error } = useWeather();
+	const { current, hourly, isLoading, error } = useWeather();
 
 	if (error) {
 		return <Error />;
 	}
-
-	console.log(current);
 
 	return (
 		<>
@@ -24,9 +22,9 @@ const App = () => {
 			<main>
 				<h1 className="title">How's the sky looking today?</h1>
 				<Searchbar />
-				<WeatherInfo data={weatherData} isLoading={isLoading} />
-				<HourlyForecast hourlyForecastData={hourlyForecastData} isLoading={isLoading} />
-				<WeatherDetails weatherData={current} />
+				<WeatherInfo data={current} isLoading={isLoading} />
+				<HourlyForecast hourlyForecastData={hourly} isLoading={isLoading} />
+				<WeatherDetails weatherData={current} isLoading={isLoading} />
 			</main>
 		</>
 	);

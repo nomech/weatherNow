@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Searchbar.module.css';
 import searchIcon from '../../assets/images/icon-search.svg';
 import Button from './../Button/Button';
@@ -20,15 +20,10 @@ const Searchbar = () => {
 		`https://geocoding-api.open-meteo.com/v1/search?name=${search}&count=10&language=en&format=json`
 	);
 
-	useMemo(() => ({ data }), [data]);
-
 	const { setLocation } = useWeather();
 
 	const handleChange = (e) => {
 		setSearch(e.target.value);
-		if (data) {
-			setSelectedLocation(data?.results ? data.results[0] : null);
-		}
 	};
 
 	const handleonClickSearch = () => {
@@ -62,7 +57,7 @@ const Searchbar = () => {
 						onChange={handleChange}
 						value={search}
 						onClick={handleonClickSearch}
-						autoComplete='off'
+						autoComplete=""
 					/>
 					{data?.results && isVisible && (
 						<Dropdown

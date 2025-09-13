@@ -3,8 +3,6 @@ import styles from './WeatherDetails.module.css';
 import DetailsCard from '../DetailsCard/DetailsCard';
 
 const WeatherDetails = ({ weatherData, isLoading }) => {
-	console.log(weatherData);
-
 	return (
 		<>
 			{weatherData && !isLoading && (
