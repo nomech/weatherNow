@@ -16,7 +16,7 @@ main {
 	grid-column: 1 / -1;
 	display: grid;
 	grid-template-columns: repeat(12, var(--spacing-900));
-	grid-template-rows: auto;
+
 	gap: var(--spacing-300);
 	justify-items: center;
 }

@@ -5,7 +5,7 @@ export const useFetch = (url) => {
 	// State variables to hold data, error, and loading status
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
 	// Effect to fetch data from the provided URL
 	useEffect(() => {
@@ -39,7 +39,7 @@ export const useFetch = (url) => {
 				setData(data);
 				setError(null);
 			} catch (error) {
-                // Ignore abort errors
+				// Ignore abort errors
 				if (error.name === 'AbortError') {
 					return;
 				}

@@ -5,8 +5,8 @@
 	width: 100%;
 	padding: var(--spacing-200);
 	border-radius: var(--radius-12);
-	border: 1px solid var(--colors-neutral-700);
-	background-color: var(--netutral-800);
+	border: 1px solid var(--neutral-700);
+	background-color: var(--neutral-800);
 }
 
 .dropdownList {
@@ -27,9 +27,9 @@
 
 .dropdownItem:hover {
 	width: 100%;
-	border-radius: var(--corner-radius-8, 8px);
-	border: 1px solid var(--colors-neutral-600, #3c3b5e);
-	background: var(--colors-neutral-700, #302f4a);
+	border-radius: var(--radius-8);
+	border: 1px solid var(--neutral-600);
+	background: var(--neutral-700);
 }
 
 .loadingRow {

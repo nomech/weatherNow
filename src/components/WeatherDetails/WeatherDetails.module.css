@@ -1,0 +1,4 @@
+.weatherDetails {
+	grid-column: 1 / 9;
+	height: 200px;
+}

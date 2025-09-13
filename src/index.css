@@ -25,13 +25,13 @@
 	/* --Colors-- */
 
 	/* Neutral */
-	--netutral-900: #02012c;
-	--netutral-800: #262540;
-	--netutral-700: #302f4a;
-	--netutral-600: #3c3b5e;
-	--netutral-300: #acacb7;
-	--netutral-200: #d4d3d9;
-	--netutral-0: #ffffff;
+	--neutral-900: #02012c;
+	--neutral-800: #262540;
+	--neutral-700: #302f4a;
+	--neutral-600: #3c3b5e;
+	--neutral-300: #acacb7;
+	--neutral-200: #d4d3d9;
+	--neutral-0: #ffffff;
 
 	/* Orange */
 	--orange-500: #ff820a;
@@ -123,7 +123,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: var(--netutral-0);
+	color: var(--neutral-0);
 	font-family: var(--font-dm-sans);
 	line-height: 120%;
 }
@@ -134,7 +134,7 @@ html {
 }
 
 body {
-	background-color: var(--netutral-900);
+	background-color: var(--neutral-900);
 }
 
 .loading {

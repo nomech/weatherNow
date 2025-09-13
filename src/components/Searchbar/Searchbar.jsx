@@ -43,12 +43,8 @@ const Searchbar = () => {
 
 	const handleonClickSubmit = (e) => {
 		e.preventDefault();
-		console.log(selectedLocation);
 		if (selectedLocation) {
-			setLocation({
-				latitude: selectedLocation.latitude,
-				longitude: selectedLocation.longitude,
-			});
+			setLocation(selectedLocation);
 		}
 	};
 
@@ -66,6 +62,7 @@ const Searchbar = () => {
 						onChange={handleChange}
 						value={search}
 						onClick={handleonClickSearch}
+						autoComplete='off'
 					/>
 					{data?.results && isVisible && (
 						<Dropdown
@@ -76,12 +73,10 @@ const Searchbar = () => {
 						/>
 					)}
 				</div>
-				<Button onClick={handleonClickSubmit}>Search</Button>
 			</div>
-
-			{selectedLocation === null && (
-				<h2 className={styles.noResults}>No Search Resutls found!</h2>
-			)}
+			<Button onClick={handleonClickSubmit} className={'searchButton'}>
+				Search
+			</Button>
 		</>
 	);
 };
