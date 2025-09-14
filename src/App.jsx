@@ -6,13 +6,18 @@ import Error from './components/Error/Error';
 import HourlyForecast from './components/HourlyForecast/HourlyForecast';
 import { useWeather } from './contexts/weather';
 import WeatherDetails from './components/WeatherDetails/WeatherDetails';
+import DailyForecast from './components/DailyForecast/DailyForecast';
 
 const App = () => {
-	const { current, hourly, isLoading, error } = useWeather();
+	const { current, hourly, daily, isLoading, error } = useWeather();
 
 	if (error) {
 		return <Error />;
 	}
+
+	//TODO!
+	// - Create Daily forecast
+	// - Fix icon map
 
 	return (
 		<>
@@ -23,8 +28,9 @@ const App = () => {
 				<h1 className="title">How's the sky looking today?</h1>
 				<Searchbar />
 				<WeatherInfo data={current} isLoading={isLoading} />
-				<HourlyForecast hourlyForecastData={hourly} isLoading={isLoading} />
 				<WeatherDetails weatherData={current} isLoading={isLoading} />
+				<HourlyForecast hourlyForecastData={hourly} isLoading={isLoading} />
+				<DailyForecast weatherData={daily} isLoading={isLoading} />
 			</main>
 		</>
 	);

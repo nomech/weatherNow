@@ -39,3 +39,10 @@ export const formatTime = (date) => {
 		hour12: false,
 	}).format(date);
 };
+
+
+export const formatDay = (date) => {
+	return new Intl.DateTimeFormat('en-US', {
+		weekday: 'short',
+	}).format(date);
+};

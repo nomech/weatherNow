@@ -1,5 +1,5 @@
 import { useFetch } from '../../hooks/useFetch';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { WeatherContext } from './WeatherContext';
 
 export const WeatherProvider = ({ children }) => {
