@@ -1,12 +1,55 @@
-# React + Vite
+# WeatherNow (Frontend Mentor Challenge)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive weather app built with React and Vite, styled with custom CSS modules. This project is a solution to a [Frontend Mentor](https://www.frontendmentor.io/) challenge and was built as part of a hackathon event.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Search for weather by city
+-   View current weather conditions
+-   Hourly and daily forecasts
+-   Weather details (humidity, wind, etc.)
+-   Error handling and loading states
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+public/           # Static assets (images, fonts)
+src/
+  components/     # Reusable UI components
+  contexts/       # React context providers
+  hooks/          # Custom React hooks
+  utils/          # Utility functions
+  App.jsx         # Main app component
+  main.jsx        # Entry point
+```
+
+## Getting Started
+
+1.  Install dependencies
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+2.  Run the development server
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+    The app will be available at `http://localhost:5173` by default.
+
+## Credits
+
+-   [Frontend Mentor](https://www.frontendmentor.io/) for the challenge
+-   [React](https://react.dev/) for the UI library
+-   [Vite](https://vitejs.dev/) for the build tool
+-   [Open-Meteo API](https://open-meteo.com/) for weather data
+-   Fonts from [Google Fonts](https://fonts.google.com/)
+
+Feel free to use, modify, and share!
