@@ -1,4 +1,4 @@
-.hourlyForecast {
+.hourly {
 	grid-column: 9 / 13;
 	grid-row: 3 / 6;
 	display: flex;

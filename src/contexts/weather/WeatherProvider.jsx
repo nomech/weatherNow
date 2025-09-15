@@ -30,13 +30,24 @@ export const WeatherProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (location && data) {
-			console.log(data);
-
 			const { name, country, country_code } = location;
 			const { current, current_units, hourly, hourly_units, daily, daily_units } = data;
+			const currentTime = new Date(current.time);
+			
+			
+			currentTime.setMinutes(0, 0);
+			const currentTimeIndex = hourly.time.indexOf(currentTime.toISOString().slice(0, 16));
+
+			hourly.temperature_2m = hourly.temperature_2m.slice(
+				currentTimeIndex,
+				currentTimeIndex + 8
+			);
+			
+			hourly.weather_code = hourly.weather_code.slice(currentTimeIndex, currentTimeIndex + 8);
+			hourly.time = hourly.time.slice(currentTimeIndex, currentTimeIndex + 8);
 
 			setCurrent({ name, country, country_code, current, current_units });
-			setHourly({ hourly, hourly_units });
+			setHourly(hourly, hourly_units);
 			setDaily(daily, daily_units);
 		}
 	}, [data, location]);

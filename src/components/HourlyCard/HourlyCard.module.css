@@ -1,0 +1,25 @@
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 var(--spacing-100);
+	width: 100%;
+	border-radius: var(--radius-8);
+	border: 1px solid var(--neutral-600);
+	background: var(--neutral-700);
+}
+
+.weatherIcon {
+	width: 50px;
+	height: 50px;
+}
+.forecastDetails {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-200);
+}
+
+.time {
+	font-size: var(--tp5m-size);
+}

@@ -29,7 +29,7 @@ const App = () => {
 				<Searchbar />
 				<WeatherInfo data={current} isLoading={isLoading} />
 				<WeatherDetails weatherData={current} isLoading={isLoading} />
-				<HourlyForecast hourlyForecastData={hourly} isLoading={isLoading} />
+				<HourlyForecast hourlyData={hourly} isLoading={isLoading} />
 				<DailyForecast weatherData={daily} isLoading={isLoading} />
 			</main>
 		</>

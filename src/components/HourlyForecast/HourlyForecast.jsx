@@ -1,58 +1,44 @@
 import styles from './HourlyForecast.module.css';
-import { formatTime, weatherMap } from '../../utils/weatherUtils';
 import { useEffect, useState } from 'react';
+import HourlyCard from '../HourlyCard/HourlyCard';
 
-const HourlyForecast = ({ hourlyForecastData, isLoading }) => {
-	const [timeAndTemp, setTimeAndTemp] = useState(null);
+const HourlyForecast = ({ hourlyData, isLoading }) => {
+	const [hourlyWeather, setHourlyWeather] = useState(null);
+	console.log(hourlyData);
 
 	useEffect(() => {
-		if (hourlyForecastData && hourlyForecastData.hourly) {
-			const { time, temperature_2m } = hourlyForecastData.hourly;
-			const now = new Date();
-			now.setMinutes(0, 0, 0);
-			const isoDate = now.toISOString().slice(0, 13);
-			const timeOfDayIndex = time.findIndex((t) => t.slice(0, 13) === isoDate);
-			const timeStart = Math.max(timeOfDayIndex, 0);
-			const timeEnd = timeOfDayIndex + 8;
-
-			const forecastTimeRange = time.slice(timeStart, timeEnd);
-			const forecastTempRange = temperature_2m.slice(timeStart, timeEnd);
-
-			setTimeAndTemp(
-				forecastTimeRange.map((t, index) => {
+		if (hourlyData) {
+			setHourlyWeather(
+				hourlyData.time.map((item, index) => {
 					return {
-						time: formatTime(new Date(t)),
-						temperature: Math.round(forecastTempRange[index]),
+						hour: item,
+						weather_code: hourlyData.weather_code[index],
+						temperature: hourlyData.temperature_2m[index],
 					};
 				})
 			);
 		}
-	}, [hourlyForecastData]);
-
+	}, [hourlyData]);
 	return (
 		<>
-			{hourlyForecastData && !isLoading && (
-				<div className={styles.hourlyForecast}>
+			{hourlyData && !isLoading && (
+				<div className={styles.hourly}>
 					<div className={styles.header}>
 						<h3>Hourly Forecast</h3>
 						<p>Menu</p>
 					</div>
-					<div className={styles.forecastList}>
-						{timeAndTemp &&
-							timeAndTemp.map((item) => (
-								<div className={styles.forecastItem} key={item.time}>
-									<div className={styles.forecastDetails}>
-										<img
-											src={weatherMap[3]}
-											alt="Weather icon"
-											className={styles.weatherIcon}
-										/>
-										<p>{item.time}</p>
-									</div>
-									<p>{item.temperature}°</p>
-								</div>
+					<ul className={styles.forecastList}>
+						{hourlyWeather &&
+							!isLoading &&
+							hourlyWeather.map((weather) => (
+								<HourlyCard
+									key={weather.hour}
+									hour={weather.hour}
+									weatherCode={weather.weather_code}
+									temperature={weather.temperature}
+								/>
 							))}
-					</div>
+					</ul>
 				</div>
 			)}
 		</>

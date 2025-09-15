@@ -20,8 +20,6 @@ const DailyForecast = ({ weatherData, isLoading }) => {
 		}
 	}, [weatherData]);
 
-	console.log(dailyWeather);
-
 	return (
 		<div className={styles.dailyForecast}>
 			{dailyWeather &&
