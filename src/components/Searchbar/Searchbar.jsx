@@ -57,7 +57,7 @@ const Searchbar = () => {
 						onChange={handleChange}
 						value={search}
 						onClick={handleonClickSearch}
-						autoComplete=""
+						autoComplete="off"
 					/>
 					{data?.results && isVisible && (
 						<Dropdown

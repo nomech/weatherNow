@@ -55,6 +55,7 @@
 	--spacing-300: 24px;
 	--spacing-250: 20px;
 	--spacing-200: 16px;
+	--spacing-175: 14px;
 	--spacing-150: 12px;
 	--spacing-125: 10px;
 	--spacing-100: 8px;
@@ -140,6 +141,11 @@ body {
 
 .loading {
 	animation: spinner 1.5s linear infinite;
+}
+
+hr {
+	width: 100%;
+	border: 1px solid var(--neutral-600);
 }
 
 @keyframes spinner {

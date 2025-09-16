@@ -15,10 +15,6 @@ const App = () => {
 		return <Error />;
 	}
 
-	//TODO!
-	// - Create Daily forecast
-	// - Fix icon map
-
 	return (
 		<>
 			<header>

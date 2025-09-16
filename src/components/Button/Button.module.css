@@ -1,14 +1,61 @@
 .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: var(--blue-500);
 	border: none;
 	border-radius: var(--radius-12);
 	cursor: pointer;
 	padding: var(--spacing-200) var(--spacing-300);
 	font-size: var(--tp5-size);
-
 }
 
 .searchButton {
 	grid-column: 9 / 11;
 	justify-self: flex-start;
+}
+
+.menuButton {
+	display: flex;
+	padding: var(--spacing-150) var(--spacing-200);
+	width: 120px;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-125);
+	border-radius: 8px;
+	background: var(--neutral-800);
+}
+
+.menuButton::before {
+	content: '';
+	position: absolute;
+	left: var(--spacing-175, 14px);
+	width: 14px;
+	height: 17px;
+	background: url('../../assets//images/icon-units.svg') no-repeat center;
+	background-size: contain;
+}
+
+.menuButton::after {
+	content: '';
+	position: absolute;
+	right: var(--spacing-175, 14px);
+	width: 14px;
+	height: 17px;
+	background: url('../../assets//images/icon-dropdown.svg') no-repeat center;
+	background-size: contain;
+}
+
+.switchButton {
+	background-color: transparent;
+	justify-content: flex-start;
+	color: var(--colors-neutral-0, #fff);
+	border-radius: var(--corner-radius-8, 8px);
+	font-size: 16px;
+	padding: 8px;
+	width: 100%;
+}
+
+.switchButton:hover{
+	background-color: var(--neutral-700);
 }
