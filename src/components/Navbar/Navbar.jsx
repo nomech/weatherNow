@@ -5,6 +5,7 @@ import UnitsMenu from '../UnitsMenu/UnitsMenu';
 import { useClickAway } from '@uidotdev/usehooks';
 import Button from '../Button/Button';
 
+
 const Navbar = () => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
 	const dropdownRef = useClickAway(() => {

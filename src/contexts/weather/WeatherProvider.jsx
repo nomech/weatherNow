@@ -33,8 +33,7 @@ export const WeatherProvider = ({ children }) => {
 			const { name, country, country_code } = location;
 			const { current, current_units, hourly, hourly_units, daily, daily_units } = data;
 			const currentTime = new Date(current.time);
-			
-			
+
 			currentTime.setMinutes(0, 0);
 			const currentTimeIndex = hourly.time.indexOf(currentTime.toISOString().slice(0, 16));
 
@@ -42,7 +41,7 @@ export const WeatherProvider = ({ children }) => {
 				currentTimeIndex,
 				currentTimeIndex + 8
 			);
-			
+
 			hourly.weather_code = hourly.weather_code.slice(currentTimeIndex, currentTimeIndex + 8);
 			hourly.time = hourly.time.slice(currentTimeIndex, currentTimeIndex + 8);
 
@@ -60,6 +59,7 @@ export const WeatherProvider = ({ children }) => {
 				daily,
 				error,
 				isLoading,
+				params,
 				setParams,
 				setLocation,
 			}}
