@@ -21,18 +21,24 @@ const DailyForecast = ({ weatherData, isLoading }) => {
 	}, [weatherData]);
 
 	return (
-		<div className={styles.dailyForecast}>
-			{dailyWeather &&
-				!isLoading &&
-				dailyWeather.map((weather) => (
-					<DailyCard
-						key={weather.day}
-						day={weather.day}
-						weatherCode={weather.weather_code}
-						min={weather.min}
-						max={weather.max}
-					/>
-				))}
+		<div className={styles.dailyForecastContainer}>
+			{dailyWeather && (
+				<>
+					<h3>Daily Forecast</h3>
+					<div className={styles.dailyForecast}>
+						{!isLoading &&
+							dailyWeather.map((weather) => (
+								<DailyCard
+									key={weather.day}
+									day={weather.day}
+									weatherCode={weather.weather_code}
+									min={weather.min}
+									max={weather.max}
+								/>
+							))}
+					</div>
+				</>
+			)}
 		</div>
 	);
 };

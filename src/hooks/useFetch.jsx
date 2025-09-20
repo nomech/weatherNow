@@ -5,7 +5,7 @@ export const useFetch = (url) => {
 	// State variables to hold data, error, and loading status
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
 	// Effect to fetch data from the provided URL
 	useEffect(() => {

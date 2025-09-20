@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './DetailsCard.module.css';
-const DetailsCard = ({ title, description, unit }) => {
+const DetailsCard = ({ title, description, unit, isLoading }) => {
 	return (
 		<div className={styles.card}>
 			<h3 className={styles.title}>{title}</h3>
-			<p className={styles.description}>
-				{description} {unit}
-			</p>
+			{isLoading && <p>-</p>}
+			{!isLoading && (
+				<p className={styles.description}>
+					{description} {unit}
+				</p>
+			)}
 		</div>
 	);
 };
