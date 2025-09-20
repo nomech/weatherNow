@@ -1,0 +1,39 @@
+.hourlyMenu {
+	position: absolute;
+	right: 0;
+	top: 55px;
+	display: flex;
+	width: 214px;
+	padding: var(--spacing-100, 8px);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--spacing-050, 4px);
+	border-radius: var(--corner-radius-12, 12px);
+	border: 1px solid var(--colors-neutral-600, #3c3b5e);
+	background: var(--colors-neutral-800, #262540);
+	box-shadow: 0 8px 16px 0 rgba(2, 1, 44, 0.32);
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	width: 100%;
+}
+
+.listItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-100);
+	border: 1px solid transparent;
+	width: 100%;
+	cursor: pointer;;
+}
+
+.listItem:hover {
+	border-radius: var(--radius-8);
+	border: 1px solid var(--neutral-600);
+	background: var(--neutral-700);
+}

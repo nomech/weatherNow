@@ -7,7 +7,8 @@
 	gap: var(--spacing-200);
 	background-color: var(--neutral-800);
 	width: 100%;
-	padding: var(--spacing-300);
+	height: 615px;
+	padding: var(--spacing-300) 0;
 	border-radius: var(--radius-20);
 }
 
@@ -16,6 +17,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	padding: 0 var(--spacing-300);
 	margin-bottom: var(--spacing-200);
 }
 
@@ -24,7 +26,29 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: var(--spacing-200);
+	padding: 0 var(--spacing-300);
 	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.forecastList::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+.forecastList::-webkit-scrollbar-track {
+	border-radius: 8px;
+	background: #302f4a;
+}
+
+.forecastList::-webkit-scrollbar-thumb {
+	background-color: #4658d9;
+	border-radius: 6px;
+}
+
+.forecastList::-webkit-scrollbar-thumb:hover {
+	background: #888;
 }
 
 .forecastItem {
@@ -48,4 +72,8 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: var(--spacing-200);
+}
+
+.hourelyMenuContainer {
+	position: relative;
 }

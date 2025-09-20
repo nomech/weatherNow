@@ -35,6 +35,9 @@ export const useFetch = (url) => {
 				}
 				// Parse the response data as JSON
 				const data = await response.json();
+
+				console.log(data);
+
 				// Update state with the fetched data and reset error
 				setData(data);
 				setError(null);

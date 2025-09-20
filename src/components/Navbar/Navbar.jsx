@@ -20,7 +20,7 @@ const Navbar = () => {
 		<nav className={styles.navbar}>
 			<img src={logo} alt="Logo" />
 			<div className={styles.menu}>
-				<Button className={'menuButton'} onClick={onClickButton}>
+				<Button className={'unitsMenu'} onClick={onClickButton}>
 					Menu
 				</Button>
 				{menuIsOpen && <UnitsMenu ref={dropdownRef} />}

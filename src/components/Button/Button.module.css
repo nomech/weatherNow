@@ -15,7 +15,9 @@
 	justify-self: flex-start;
 }
 
-.menuButton {
+.unitsMenu,
+.hourlyMenu {
+	position: relative;
 	display: flex;
 	padding: var(--spacing-150) var(--spacing-200);
 	width: 120px;
@@ -26,7 +28,7 @@
 	background: var(--neutral-800);
 }
 
-.menuButton::before {
+.unitsMenu::before {
 	content: '';
 	position: absolute;
 	left: var(--spacing-175, 14px);
@@ -36,7 +38,7 @@
 	background-size: contain;
 }
 
-.menuButton::after {
+.unitsMenu::after, .hourlyMenu::after {
 	content: '';
 	position: absolute;
 	right: var(--spacing-175, 14px);
@@ -56,6 +58,12 @@
 	width: 100%;
 }
 
-.switchButton:hover{
+.switchButton:hover {
 	background-color: var(--neutral-700);
+}
+
+.hourlyMenu {
+	justify-content: flex-start;
+	border-radius: 8px;
+	background: var(--colors-neutral-600, #3c3b5e);
 }
