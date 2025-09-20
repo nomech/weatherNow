@@ -3,11 +3,16 @@ import { useEffect, useState } from 'react';
 import HourlyCard from '../HourlyCard/HourlyCard';
 import HourlyMenu from '../HourlyMenu/HourlyMenu';
 import Button from '../Button/Button';
+import { useClickAway } from '@uidotdev/usehooks';
 
 const HourlyForecast = ({ hourlyData, isLoading }) => {
 	const [hourlyWeather, setHourlyWeather] = useState(null);
 	const [isVisible, setIsVisible] = useState(false);
 	const [day, setDay] = useState('Friday');
+
+	const dropdownRef = useClickAway(() => {
+		setIsVisible(false);
+	});
 
 	useEffect(() => {
 		if (hourlyData) {
@@ -42,7 +47,7 @@ const HourlyForecast = ({ hourlyData, isLoading }) => {
 							<Button className={'hourlyMenu'} onClick={onClickMenu}>
 								{day}
 							</Button>
-							{isVisible && <HourlyMenu setDay={onClickDay} />}
+							{isVisible && <HourlyMenu setDay={onClickDay} ref={dropdownRef} />}
 						</div>
 					</div>
 					<ul className={styles.forecastList}>

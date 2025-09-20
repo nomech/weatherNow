@@ -38,7 +38,8 @@
 	background-size: contain;
 }
 
-.unitsMenu::after, .hourlyMenu::after {
+.unitsMenu::after,
+.hourlyMenu::after {
 	content: '';
 	position: absolute;
 	right: var(--spacing-175, 14px);
@@ -66,4 +67,5 @@
 	justify-content: flex-start;
 	border-radius: 8px;
 	background: var(--colors-neutral-600, #3c3b5e);
+	width: 159px;
 }
