@@ -3,6 +3,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: var(--spacing-300);
+	gap: var(--spacing-200);
 	width: 100%;
 }

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import styles from './UnitsMenu.module.css';
 import Button from '../Button/Button';
 import { useWeather } from '../../contexts/weather';
@@ -31,21 +30,10 @@ const UNIT_CONFIG = [
 ];
 
 const UnitsMenu = ({ ref }) => {
-	const { params, setParams } = useWeather();
-	const [isMetric, setIsMetric] = useState(false);
+	const { params, setParams, isMetric, setIsMetric } = useWeather();
 
 	const onClickSwitch = () => {
 		setIsMetric((prev) => !prev);
-	};
-
-	const onClickUnit = (key, unit) => {
-		setParams((prevParams) => ({
-			...prevParams,
-			[key]: unit,
-		}));
-	};
-
-	useEffect(() => {
 		if (isMetric) {
 			setParams({
 				temperature_unit: 'fahrenheit',
@@ -59,7 +47,14 @@ const UnitsMenu = ({ ref }) => {
 				precipitation_unit: 'mm',
 			});
 		}
-	}, [isMetric, setParams]);
+	};
+
+	const onClickUnit = (key, unit) => {
+		setParams((prevParams) => ({
+			...prevParams,
+			[key]: unit,
+		}));
+	};
 
 	return (
 		<div className={styles.unitsMenu} ref={ref}>

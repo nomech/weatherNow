@@ -8,11 +8,13 @@ export const WeatherProvider = ({ children }) => {
 	const [current, setCurrent] = useState(null);
 	const [hourly, setHourly] = useState(null);
 	const [daily, setDaily] = useState(null);
+	const [isMetric, setIsMetric] = useState(false);
 
 	const [params, setParams] = useState({
 		temperature_unit: 'celsius',
 		wind_speed_unit: 'kmh',
 		precipitation_unit: 'mm',
+		isMetric: false,
 	});
 
 	const baseUrl = 'https://api.open-meteo.com';
@@ -62,6 +64,8 @@ export const WeatherProvider = ({ children }) => {
 				params,
 				setParams,
 				setLocation,
+				isMetric,
+				setIsMetric,
 			}}
 		>
 			{children}

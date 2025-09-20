@@ -15,6 +15,7 @@ const Navbar = () => {
 	const onClickButton = () => {
 		setMenuIsOpen((prev) => !prev);
 	};
+
 	return (
 		<nav className={styles.navbar}>
 			<img src={logo} alt="Logo" />
