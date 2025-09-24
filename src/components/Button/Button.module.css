@@ -69,3 +69,10 @@
 	background: var(--neutral-600);
 	width: 159px;
 }
+
+@media (max-width: 1200px) {
+	.searchButton {
+		grid-column: 7 / -1;
+		width: 100%;
+	}
+}

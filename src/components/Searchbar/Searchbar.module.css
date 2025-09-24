@@ -1,6 +1,6 @@
 .searchbarContainer {
 	display: flex;
-	grid-column: 3 / 9;
+	grid-column: 1 / 9;
 	gap: var(--spacing-200);
 	width: 90%;
 	justify-self: flex-end;
@@ -33,4 +33,13 @@
 .noResults {
 	grid-column: 5/ 9;
 	margin: 24px;
+}
+
+@media (max-width: 1200px) {
+	.searchbarContainer {
+		grid-column: 1 / 7;
+		width: 100%;
+		justify-self: flex-start;
+	}
+	
 }

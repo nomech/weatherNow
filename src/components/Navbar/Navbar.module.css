@@ -1,8 +1,15 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+	width: 1130px;
 }
 
-.menu{
-    position: relative;
+.menu {
+	position: relative;
+}
+
+@media (max-width: 1200px) {
+	.navbar {
+		width: 768px;
+	}
 }

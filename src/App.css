@@ -1,10 +1,11 @@
 #root {
-	display: grid;
-	grid-template-columns: repeat(12, var(--spacing-900));
+	display: flex;
+	flex-direction: column;
 	gap: var(--spacing-300);
 	margin: 0 auto;
 	text-align: center;
-	place-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 header {
@@ -26,4 +27,19 @@ main {
 	font-family: var(--font-bricolage);
 	font-size: var(--tp2-size);
 	font-weight: var(--tp2-weight);
+}
+
+@media (max-width: 1200px) {
+	#root {
+		max-width: 1200px;
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	main {
+		grid-template-columns: repeat(8, var(--spacing-900));
+	}
+
+	.title {
+		grid-column: 1 / -1;
+	}
 }

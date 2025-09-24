@@ -77,3 +77,10 @@
 .hourelyMenuContainer {
 	position: relative;
 }
+
+@media (max-width: 1200px) {
+	.hourly {
+		grid-column: 1 / -1;
+		grid-row: 6 / 7;
+	}
+}
