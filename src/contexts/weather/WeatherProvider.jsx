@@ -20,7 +20,7 @@ export const WeatherProvider = ({ children }) => {
 	const version = 'v1';
 	const queryType = 'forecast';
 	const { data, error, isLoading } = useFetch(url);
-
+	
 	useEffect(() => {
 		if (location) {
 			const today = new Date();
@@ -71,7 +71,6 @@ export const WeatherProvider = ({ children }) => {
 			setCurrent({ name, country, country_code, current, current_units });
 			setHourly(groupedByDay, hourly_units);
 			setDaily(daily, daily_units);
-			console.log(groupedByDay);
 		}
 	}, [data, location]);
 

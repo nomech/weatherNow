@@ -8,7 +8,7 @@ import { useClickAway } from '@uidotdev/usehooks';
 const HourlyForecast = ({ hourlyData, isLoading }) => {
 	const [hourlyWeather, setHourlyWeather] = useState(null);
 	const [isVisible, setIsVisible] = useState(false);
-	const [day, setDay] = useState('Friday');
+	const [day, setDay] = useState(new Date().toLocaleString('default', { weekday: 'long' }));
 
 	const dropdownRef = useClickAway(() => {
 		setIsVisible(false);
@@ -17,7 +17,7 @@ const HourlyForecast = ({ hourlyData, isLoading }) => {
 	useEffect(() => {
 		if (hourlyData) {
 			setHourlyWeather(
-				hourlyData['Monday'].time.map((item, index) => {
+				hourlyData[day].time.map((item, index) => {
 					return {
 						hour: item,
 						weather_code: hourlyData[day].weather_code[index],
