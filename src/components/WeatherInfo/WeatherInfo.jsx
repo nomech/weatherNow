@@ -14,7 +14,7 @@ const WeatherInfo = ({ data, isLoading }) => {
 			)}
 			{!isLoading && data && (
 				<div className={styles.weatherContainer}>
-					<di className={styles.weatherInfo}>
+					<div className={styles.weatherInfo}>
 						<div className={styles.location}>
 							<h2>
 								{data?.name}, {data?.country}
@@ -31,7 +31,7 @@ const WeatherInfo = ({ data, isLoading }) => {
 								{Math.round(data.current.temperature_2m)}°
 							</h2>
 						</div>
-					</di>
+					</div>
 				</div>
 			)}
 		</>

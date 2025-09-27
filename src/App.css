@@ -32,14 +32,27 @@ main {
 @media (max-width: 1200px) {
 	#root {
 		max-width: 1200px;
-		grid-template-columns: repeat(8, 1fr);
 	}
-
 	main {
 		grid-template-columns: repeat(8, var(--spacing-900));
 	}
 
 	.title {
 		grid-column: 1 / -1;
+	}
+
+	header {
+		width: 100%;
+	}
+}
+
+@media (max-width: 792px) {
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: var(--spacing-300);
+		width: 100%;
 	}
 }

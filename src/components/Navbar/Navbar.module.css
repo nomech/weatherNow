@@ -1,7 +1,7 @@
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	width: 1130px;
+	min-width: 1200px;
 }
 
 .menu {
@@ -10,6 +10,14 @@
 
 @media (max-width: 1200px) {
 	.navbar {
-		width: 768px;
+		min-width: unset;
+		width: 100%;
+		padding: 0 var(--spacing-300);
+	}
+}
+
+@media (max-width: 792px) {
+	.logo {
+		width: 138px;
 	}
 }

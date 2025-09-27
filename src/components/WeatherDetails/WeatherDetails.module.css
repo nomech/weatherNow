@@ -6,3 +6,9 @@
 	gap: var(--spacing-300);
 	width: 100%;
 }
+
+@media (max-width: 792px) {
+	.weatherDetails {
+		flex-wrap: wrap;
+	}
+}

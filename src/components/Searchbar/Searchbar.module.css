@@ -1,6 +1,6 @@
 .searchbarContainer {
 	display: flex;
-	grid-column: 1 / 9;
+	grid-column: 3 / 9;
 	gap: var(--spacing-200);
 	width: 90%;
 	justify-self: flex-end;

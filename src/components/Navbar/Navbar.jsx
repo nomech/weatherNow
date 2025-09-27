@@ -5,7 +5,6 @@ import UnitsMenu from '../UnitsMenu/UnitsMenu';
 import { useClickAway } from '@uidotdev/usehooks';
 import Button from '../Button/Button';
 
-
 const Navbar = () => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
 	const dropdownRef = useClickAway(() => {
@@ -18,7 +17,7 @@ const Navbar = () => {
 
 	return (
 		<nav className={styles.navbar}>
-			<img src={logo} alt="Logo" />
+			<img className={styles.logo} src={logo} alt="Logo" />
 			<div className={styles.menu}>
 				<Button className={'unitsMenu'} onClick={onClickButton}>
 					Menu
