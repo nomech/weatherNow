@@ -19,11 +19,15 @@
 .description {
 	color: var(--colors-neutral-0, #fff);
 	text-align: center;
-
-	/* text-preset-3 */
 	font-family: 'DM Sans';
 	font-size: 32px;
 	font-style: normal;
 	font-weight: 300;
-	line-height: 100%; /* 32px */
+	line-height: 100%;
+}
+
+@media (max-width: 792px) {
+	.card {
+		align-items: unset;
+	}
 }
